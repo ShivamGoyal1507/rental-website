@@ -715,9 +715,6 @@ app.post('/logout', (req, res) => {
 });
 
 // Server
-app.listen(3000, () => {
-    console.log("Server running on http://localhost:3000");
-});
 module.exports = app;
 module.exports.handler = serverless(app);
 
