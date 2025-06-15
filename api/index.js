@@ -11,8 +11,7 @@ const mongoose = require('mongoose');
 
 const app = express();
 const serverless = require('serverless-http');
-module.exports = app;
-module.exports.handler = serverless(app);
+
 // ✅ Connect to MongoDB Atlas
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
@@ -719,4 +718,6 @@ app.post('/logout', (req, res) => {
 app.listen(3000, () => {
     console.log("Server running on http://localhost:3000");
 });
+module.exports = app;
+module.exports.handler = serverless(app);
 
