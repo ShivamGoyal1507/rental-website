@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/stylesheet/style.css" />
+  <script src="/javascripts/style.js"></script>
+  <title>Shyam Parisar - Peaceful Living Rooms in Surajpur</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body class="bg-cover text-white font-sans min-h-screen"
+  style="background-image: url('https://coolbackgrounds.imgix.net/4lBzkVBmJ0qvFJ90SJHEdV/7645fc49f7f1fb4a8c31a94fc4c97f4d/black-particles-background.png?w=3840&q=60&auto=format,compress');">
+
+  <!-- Header -->
+  <header class="bg-gray-700 shadow-lg px-8 py-6 rounded-b-3xl">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
+      <div class="text-center md:text-left">
+        <h1 class="text-4xl font-bold text-white">Shyam Parisar</h1>
+        <p class="text-sm text-gray-300">Your Peaceful Living Starts Here</p>
+      </div>
+      <nav class="flex flex-wrap justify-center md:justify-end gap-4 mt-4 md:mt-0 text-sm">
+        <a href="/login" class="hover:text-blue-400">Login</a>
+        <a href="/signup" class="hover:text-blue-400">Signup</a>
+        <a href="#contact" class="hover:text-blue-400 transition duration-300">About Us</a>
+        <a href="#Gallery" class="hover:text-blue-400 transition duration-300">Gallery</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto p-2 grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+
+    <!-- Sign-Up Form -->
+    <section class="bg-gray-900 border border-gray-700 rounded-xl p-8 shadow-lg">
+      <h2 class="text-2xl font-semibold text-center mb-6">Apply For Room</h2>
+      <form class="flex flex-col gap-4 px-12" onsubmit="return verify()" method="post" action="/nextpage">
+        <input type="text" id="name" name="name" placeholder="Your Name"
+          class="p-3 rounded-md text-black text-center focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <input type="number" id="number" name="number" placeholder="Your Phone Number"
+          class="p-3 rounded-md text-black text-center focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <input type="email" id="email" name="email" placeholder="Your Email Address"
+          class="p-3 rounded-md text-black text-center focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <input type="number" id="floor" name="floor" placeholder="Preferred Floor"
+          class="p-3 rounded-md text-black text-center focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <button type="submit"
+          class="bg-blue-600 hover:bg-blue-500 transition-colors w-full p-3 rounded-md font-semibold text-white">
+          Apply
+        </button>
+      </form>
+    </section>
+
+    <!-- Google Map -->
+    <section class="bg-gray-900 border border-gray-700 rounded-xl p-8 shadow-lg">
+      <h2 class="text-2xl font-semibold text-center mb-6">Our Location</h2>
+      <div class="w-full h-64 rounded-md overflow-hidden shadow-md">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.9190028533635!2d82.86356308316522!3d23.209622255304044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39885579e8acc595%3A0xe2020441e4a17f96!2sShree%20Shyam%20Mandir!5e0!3m2!1sen!2sin!4v1743920365030!5m2!1sen!2sin"
+          width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="text-sm text-gray-300 font-semibold py-2 text-center">
+        <p>In Front Of Shyam Mandir</p>
+        <p>Surajpur, Chhattisgarh</p>
+        <p>Pin-497229</p>
+      </div>
+    </section>
+
+    <!-- Image Gallery -->
+    <section id="Gallery"
+      class="scroll-mt-28 bg-gray-900 border border-gray-700 rounded-xl p-8 shadow-lg col-span-1 md:col-span-2 overflow-hidden">
+      <div id="slider" class="flex w-full transition-transform duration-1000 ease-in-out">
+        <div class="w-full h-80 flex-shrink-0 rounded-md overflow-hidden shadow-md">
+          <img src="https://img.freepik.com/free-vector/abstract-blue-light-pipe-speed-zoom-black-background-technology_1142-9530.jpg"
+            class="w-full h-full object-cover" alt="Gallery Image 1">
+        </div>
+        <div class="w-full h-80 flex-shrink-0 rounded-md overflow-hidden shadow-md">
+          <img src="https://i.pinimg.com/736x/cb/c2/08/cbc208059429ef521fb5d0f26d0b5473.jpg"
+            class="w-full h-full object-cover" alt="Gallery Image 2">
+        </div>
+        <div class="w-full h-80 flex-shrink-0 rounded-md overflow-hidden shadow-md">
+          <img src="https://undsgn.com/wp-content/uploads/2018/04/ltotbngnzzu.jpg"
+            class="w-full h-full object-cover" alt="Gallery Image 3">
+        </div>
+      </div>
+
+      <!-- Dots -->
+      <div class="flex justify-center mt-4 space-x-2" id="dots">
+        <span class="dot w-3 h-3 bg-white rounded-full opacity-50 cursor-pointer"></span>
+        <span class="dot w-3 h-3 bg-white rounded-full opacity-50 cursor-pointer"></span>
+        <span class="dot w-3 h-3 bg-white rounded-full opacity-50 cursor-pointer"></span>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact"
+      class="scroll-mt-28 bg-gray-900 border border-gray-700 rounded-xl p-8 shadow-lg col-span-1 md:col-span-2">
+      <h2 class="text-2xl font-semibold text-center mb-6">Contact Us</h2>
+      <div class="flex flex-wrap justify-center gap-4">
+        <!-- Repeat Contact Card -->
+        <div class="bg-gray-900 text-center rounded-xl p-2 shadow-lg w-64">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQABqQIdskCD9BK0I81EbVfV9tTz320XvJ35A&s"
+            class="mx-auto rounded-md" alt="Contact Person">
+          <div class="p-4 text-sm">
+            <p>Name: Sajjan Kumar Goyal</p>
+            <p>Mobile No: 8889977400</p>
+            <p>Email: skg@gmail.com</p>
+          </div>
+        </div>
+
+        <!-- Clone card 2 & 3 if needed -->
+        <!-- ... -->
+      </div>
+    </section>
+
+    <!-- Rules Section -->
+    <section class="bg-gray-900 border border-gray-700 rounded-xl p-8 shadow-lg col-span-1 md:col-span-2">
+      <h2 class="text-2xl font-semibold text-center mb-6">Rules & Regulations</h2>
+      <ul class="list-disc list-inside space-y-2 text-gray-300 text-sm">
+        <li>No loud music or parties after 10 PM.</li>
+        <li>Maintain cleanliness in shared areas.</li>
+        <li>Visitors are allowed until 8 PM only.</li>
+        <li>Rent must be paid before the 5th of every month.</li>
+        <li>Damage to property will incur penalties.</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 mt-12 text-center p-4 text-gray-400 text-sm">
+    © 2025 Shyam Parisar. All rights reserved.
+  </footer>
+
+  <!-- JS Scripts -->
+  <script>
+    // Image Slider Logic
+    const slider = document.getElementById("slider");
+    const dots = document.querySelectorAll(".dot");
+    let currentIndex = 0;
+
+    function updateSlider(index) {
+      slider.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("opacity-100", i === index);
+        dot.classList.toggle("opacity-50", i !== index);
+      });
+      currentIndex = index;
+    }
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => updateSlider(index));
+    });
+
+    setInterval(() => {
+      const nextIndex = (currentIndex + 1) % dots.length;
+      updateSlider(nextIndex);
+    }, 4000);
+
+    // Form Validation
+    function verify() {
+      const name = document.getElementById("name").value.trim();
+      const number = document.getElementById("number").value.trim();
+      if (!name || !number) {
+        alert("Please fill in all required fields.");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</body>
+
+</html>

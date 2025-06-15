@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+ <!-- edit by owner-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="/stylesheet/style.css">
+    <script src="/javascripts/style.js"></script>
+    <title>User Page</title>
+</head>
+
+<body class="flex  justify-center  gap-4 items-center min-h-screen min-w-screen bg-gray-800">
+
+    <div class="m-4 p-4 bg-black rounded-lg  border-white h-auto text-white">
+        <h3>Edit This Profile</h3>
+
+        <form class="flex flex-col justify-center align-center p-4 gap-4" 
+        action="/change_user/<%= user._id %>" 
+        method="POST">
+  
+      <label for="name" class="text-sm">Name</label>
+      <input type="text" name="name" id="name" value="<%= user.name %>" 
+             class="text-black rounded px-2 py-1" required />
+  
+      <label for="family" class="text-sm">Total Family Members</label>
+      <select name="family" id="family" class="text-black rounded px-2 py-1" required>
+          <option value="">Select</option>
+          <option value="1" <%= user.family == 1 ? 'selected' : '' %>>1</option>
+          <option value="2" <%= user.family == 2 ? 'selected' : '' %>>2</option>
+          <option value="3" <%= user.family == 3 ? 'selected' : '' %>>3</option>
+          <option value="4+" <%= user.family == "4+" ? 'selected' : '' %>>4 or more</option>
+      </select>
+  
+      <label for="room" class="text-sm">Room Number</label>
+      <input type="number" name="room" id="room" value="<%= user.room %>" 
+             class="text-black rounded px-2 py-1" required />
+  
+      <label for="doj" class="text-sm">Date of Joining</label>
+      <input type="date" name="doj" id="doj" 
+             value="<%= user.doj ? user.doj.toISOString().split('T')[0] : '' %>" 
+             class="text-black rounded px-2 py-1" required />
+  
+      <button type="submit" class="block rounded-lg m-auto px-2 py-1 w-1/2 bg-gray-200 text-black">Submit</button>
+  
+      <a class="text-red-400 underline text-center mt-2" href="/delete_user/<%= user._id %>">Delete User</a>
+  
+  </form>
+    </div>
+
+
+</body>
+
+</html>

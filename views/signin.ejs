@@ -1,0 +1,62 @@
+ <!-- this is home page -->
+ <!DOCTYPE html>
+ <html lang="en">
+ 
+ <head>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <script src="https://cdn.tailwindcss.com"></script>
+     <link rel="stylesheet" href="/stylesheet/style.css" />
+     <script src="/javascripts/style.js"></script>
+     <title>Shyam Parisar - signup</title>
+ </head>
+ 
+ <body class="bg-gray-900 text-white min-h-screen font-sans">
+ 
+ 
+ 
+     <!-- Main Content -->
+     <main class="p-8 space-y-12">
+        <h1>Create New Account</h1>
+ 
+         <!-- Sign-Up Form -->
+         <section class="flex justify-center items-center">
+             <div class="m-4 p-6 rounded-xl bg-gray-800 border-2 border-gray-600 w-full max-w-lg">
+                 <form class="login flex flex-col gap-4" onsubmit="return verify()" method="post" action="/nextpage">
+                     <input type="text" class="m-2 p-3 rounded-lg max-w-md text-black placeholder:text-center text-center" id="name" name="name" placeholder="Your Name">
+                     <input type="number" class="m-2 p-3 rounded-lg max-w-md text-black placeholder:text-center text-center" id="number" name="number" placeholder="Your Phone Number">
+                     <input type="email" class="m-2 p-3 rounded-lg max-w-md text-black placeholder:text-center text-center" id="email" name="email" placeholder="Your Email Address">
+                     <div class="relative m-2 max-w-md">
+                         <input type="password" class="p-3 pr-10 pl-4 w-full rounded-lg text-black placeholder:text-center text-center" id="password" name="password" placeholder="Create Password" />
+                         <span class="absolute right-3 top-2.5 cursor-pointer text-gray-400 hover:text-white" onclick="togglePassword()">👁️</span>
+                     </div>
+                     <button type="submit" class="block w-full p-3 bg-blue-600 rounded-lg text-white hover:bg-blue-500 transition-all">Sign Up</button>
+ 
+                     <div class="flex justify-between text-xs text-gray-400 mt-4">
+                         <a href="/login" class="hover:text-blue-400">Already Have Account?</a>
+                         <a href="/reset_password" class="hover:text-blue-400">Forgot Password?</a>
+                     </div>
+                     <a href="owner" class="block mt-4 text-center text-blue-400 hover:underline">Owner Login</a>
+                 </form>
+             </div>
+         </section>
+ 
+ 
+ 
+     </main>
+ 
+     <!-- Footer -->
+     <footer class="bg-gray-800 text-center p-4 mt-12 text-gray-400 text-sm">
+         © 2025 Shyam Parisar. All rights reserved.
+     </footer>
+ 
+     <!-- JS for password toggle -->
+     <script>
+         function togglePassword() {
+             const pwd = document.getElementById("password");
+             pwd.type = pwd.type === "password" ? "text" : "password";
+         }
+     </script>
+ </body>
+ 
+ </html>

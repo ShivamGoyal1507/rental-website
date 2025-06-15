@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Your Custom CSS -->
+  <link rel="stylesheet" href="/stylesheet/style.css" />
+  <script src="/javascripts/style.js"></script>
+  <title>User Page</title>
+</head>
+
+<body class="flex justify-center items-center min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+  <div class="w-full max-w-md p-8 rounded-2xl shadow-2xl bg-black border border-gray-700">
+    <h2 class="text-2xl font-semibold mb-6 text-center text-white">Create Bill Form</h2>
+
+    <form  method="POST" action="/submit_bill" class="space-y-5">
+      <div>
+        <label for="start_reading" class="block mb-1 font-medium">Start Reading:</label>
+        <input type="number" id="start_reading" name="start_reading" required
+          class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      <div>
+        <label for="start_date" class="block mb-1 font-medium">Start Reading Date:</label>
+        <input type="date" id="start_date" name="start_date" required
+          class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      <div>
+        <label for="room" class="block mb-1 font-medium">Room Number:</label>
+        <input type="number" id="room" name="room" required
+          class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      <div>
+        <label for="rent" class="block mb-1 font-medium">Rent (₹):</label>
+        <input type="number" id="rent" name="rent" required
+          class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      <button type="submit"
+        class="w-full py-2 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition duration-300 ease-in-out">
+        Submit Bill
+      </button>
+    </form>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Approve Payments</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="container mx-auto py-10 px-4">
+    <h1 class="text-3xl font-bold mb-8 text-center text-blue-600">Approve Pending Payments</h1>
+
+    <% if (user.length === 0) { %>
+      <div class="text-center text-lg font-semibold text-gray-600">No pending bill</div>
+    <% } else { %>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+          <thead class="bg-blue-600 text-white">
+            <tr>
+              <th class="py-3 px-4">User ID</th>
+              <th class="py-3 px-4">Previous Reading</th>
+              <th class="py-3 px-4">Previous Date</th>
+              <th class="py-3 px-4">Month</th>
+              <th class="py-3 px-4">Current Reading</th>
+              <th class="py-3 px-4">Current Date</th>
+              <th class="py-3 px-4">Rent</th>
+              <th class="py-3 px-4">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% user.forEach(reading => { %>
+              <tr class="border-b hover:bg-gray-100">
+                <td class="py-3 px-4"><%= reading.userId %></td>
+                <td class="py-3 px-4"><%= reading.oldpreviousReading %></td>
+                <td class="py-3 px-4"><%= reading.oldpreviousReadingDate?.toDateString() %></td>
+                <td class="py-3 px-4"><%= reading.month %></td>
+                <td class="py-3 px-4"><%= reading.previousReading ?? 'N/A' %></td>
+                <td class="py-3 px-4"><%= reading.previousReadingDate ? reading.currentReadingDate.toDateString() : 'N/A' %></td>
+                <td class="py-3 px-4">₹<%= reading.totalrent %></td>
+                <td class="py-3 px-4 font-medium <%= reading.status === 'Pending' ? 'text-yellow-600' : 'text-green-600' %>">
+                  <%= reading.status %>
+                </td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    <% } %>
+  </div>
+
+</body>
+</html>

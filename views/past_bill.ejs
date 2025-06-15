@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Bill Payment History</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white p-6">
+    <h1 class="text-2xl font-bold mb-4">Bill Payment History</h1>
+
+    <% if (bills.length === 0) { %>
+        <p>No bills found for this user.</p>
+    <% } else { %>
+        <div class="overflow-auto">
+            <table class="w-full border-collapse border border-white min-w-[900px]">
+                <thead>
+                    <tr class="bg-gray-700">
+                        <th class="border border-white p-2">Month</th>
+                        <th class="border border-white p-2">Payment Date</th>
+                        <th class="border border-white p-2">Amount</th>
+                        <th class="border border-white p-2">Method</th>
+                        <th class="border border-white p-2">Status</th>
+                        <th class="border border-white p-2">Start Reading</th>
+                        <th class="border border-white p-2">End Reading</th>
+                        <th class="border border-white p-2">Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% bills.forEach(bill => { %>
+                        <tr class="text-center">
+                            <td class="border border-white p-2"><%= bill.billMonth %></td>
+                            <td class="border border-white p-2"><%= bill.paymentDate.toDateString() %></td>
+                            <td class="border border-white p-2">₹<%= bill.amountPaid %></td>
+                            <td class="border border-white p-2"><%= bill.paymentMethod %></td>
+                            <td class="border border-white p-2"><%= bill.status %></td>
+                            <td class="border border-white p-2"><%= bill.meterStartReading %></td>
+                            <td class="border border-white p-2"><%= bill.meterEndReading %></td>
+                            <td class="border border-white p-2"><%= bill.notes || '-' %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    <% } %>
+</body>
+</html>

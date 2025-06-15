@@ -1,0 +1,74 @@
+ <!-- edit by user -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="/stylesheet/style.css">
+    <script src="/javascripts/style.js"></script>
+    <title>Edit Profile</title>
+</head>
+
+<body class="bg-gray-900 flex justify-center items-center min-h-screen">
+
+    <div class="w-full sm:w-96 bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h3 class="text-2xl font-semibold text-center text-white mb-6">Edit Profile</h3>
+
+        <!-- Profile Image Section -->
+        <div class="flex justify-center mb-6">
+            <% if (user && user.image) { %>
+                <img src="/images/<%= user.image %>" alt="Profile" class="w-28 h-28 rounded-full object-cover">
+            <% } else { %>
+                <div class="w-28 h-28 bg-gray-500 rounded-full flex items-center justify-center text-white font-semibold">
+                    No Image
+                </div>
+            <% } %>
+        </div>
+
+        <!-- Form Section -->
+        <form class="space-y-4" action="/change_user_own/<%= user._id %>" method="POST">
+        
+            <!-- Name Input -->
+            <div>
+                <label for="name" class="block text-white text-sm">Name</label>
+                <input type="text" name="name" id="name" value="<%= user.name %>" class="w-full p-2 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+            </div>
+        
+            <!-- Family Members Select -->
+            <div>
+                <label for="family" class="block text-white text-sm">Total Family Members</label>
+                <select name="family" id="family" class="w-full p-2 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    <option value="">Select</option>
+                    <option value="1" <%= user.family == 1 ? 'selected' : '' %>>1</option>
+                    <option value="2" <%= user.family == 2 ? 'selected' : '' %>>2</option>
+                    <option value="3" <%= user.family == 3 ? 'selected' : '' %>>3</option>
+                    <option value="4+" <%= user.family == "4+" ? 'selected' : '' %>>4 or more</option>
+                </select>
+            </div>
+
+            <!-- Date of Joining Input -->
+            <div>
+                <label for="doj" class="block text-white text-sm">Date of Joining</label>
+                <input type="date" name="doj" id="doj" value="<%= user.doj ? user.doj.toISOString().split('T')[0] : '' %>"
+                    class="w-full p-2 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+            </div>
+
+            <!-- Submit Button -->
+            <div class="flex justify-center">
+                <button type="submit" class="w-full py-2 px-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300">
+                    Update Profile
+                </button>
+            </div>
+        </form>
+
+      
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+ <!-- Payment Receipt -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment Receipt</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-indigo-50 to-blue-50 min-h-screen flex items-center justify-center font-sans">
+
+  <div class="bg-white max-w-3xl w-full rounded-2xl shadow-xl p-8">
+    <h2 class="text-3xl font-extrabold text-center text-indigo-700 mb-6 tracking-wide">🧾 Payment Receipt</h2>
+
+    <div class="border-t border-gray-200 pt-4 space-y-5 text-gray-800">
+      <div class="flex justify-between">
+        <span class="font-medium">👤 Name:</span>
+        <span><%= user.name %></span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-medium">📅 Bill Month:</span>
+        <span><%= billMonth %></span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-medium">💰 Amount Paid:</span>
+        <span class="text-green-600 font-semibold">₹<%= amountPaid %></span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-medium">🕒 Payment Date:</span>
+        <span><%= paymentDate %></span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-medium">🏦 Payment Method:</span>
+        <span><%= paymentMethod %></span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-medium">🔢 Meter Start Reading:</span>
+        <span><%= meterStartReading %></span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-medium">🔢 Meter End Reading:</span>
+        <span><%= meterEndReading %></span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-medium">📌 Status:</span>
+        <span><%= status %></span>
+      </div>
+      <div class="flex justify-between">
+        <span class="font-medium">🆔 Transaction ID:</span>
+        <span><%= notes || 'N/A' %></span>
+      </div>
+    </div>
+
+    <div class="mt-10 flex flex-wrap justify-center gap-4">
+      <button onclick="window.print()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg shadow transition">
+        🖨️ Print
+      </button>
+      <button onclick="downloadPDF()" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg shadow transition">
+        📥 Download PDF
+      </button>
+      <a href="/dashboard/<%= number %>">
+        <button class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-lg shadow transition">
+          ⬅️ Back to Dashboard
+        </button>
+      </a>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    function downloadPDF() {
+      const element = document.querySelector('.max-w-3xl');
+      html2pdf().from(element).save('payment_receipt.pdf');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Your Custom CSS -->
+  <link rel="stylesheet" href="/stylesheet/style.css" />
+  <script src="/javascripts/style.js"></script>
+  <title>User Page</title>
+</head>
+
+<body class="min-h-screen bg-gray-900 flex items-center justify-center p-4">
+
+  <div class="w-full max-w-md bg-gray-800 rounded-xl shadow-xl p-6 text-white">
+    <h2 class="text-2xl font-semibold mb-6 text-center">Complete Your Profile</h2>
+
+    <form class="space-y-4" action="/upload" method="POST" enctype="multipart/form-data">
+      <!-- Name -->
+      <div>
+        <label for="name" class="block text-sm mb-1">Name</label>
+        <input type="text" name="name" id="name" placeholder="Enter Your Name" required
+          class="w-full px-3 py-2 rounded-md bg-gray-100 text-black focus:outline-none focus:ring-2 focus:ring-blue-400" />
+      </div>
+
+      <!-- Profile Picture -->
+      <div>
+        <label for="image" class="block text-sm mb-1">Upload Your Profile Picture</label>
+        <input type="file" name="image" accept="image/*" required
+          class="w-full text-sm text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:bg-blue-600 file:text-white hover:file:bg-blue-700" />
+      </div>
+
+      <!-- Family Members -->
+      <div>
+        <label for="family" class="block text-sm mb-1">Total Family Members</label>
+        <select name="family" id="family" required
+          class="w-full px-3 py-2 rounded-md bg-gray-100 text-black focus:outline-none focus:ring-2 focus:ring-blue-400">
+          <option value="">Select</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4+">4 or more</option>
+        </select>
+      </div>
+
+      <!-- Phone Number -->
+      <div>
+        <label for="number" class="block text-sm mb-1">Phone Number</label>
+        <input type="number" name="number" id="number" placeholder="Enter Phone Number" required
+          class="w-full px-3 py-2 rounded-md bg-gray-100 text-black focus:outline-none focus:ring-2 focus:ring-blue-400" />
+      </div>
+
+      <!-- Room Number -->
+      <!-- Room Number -->
+<div>
+    <label for="room" class="block text-sm mb-1">Room Number</label>
+    <select name="room" id="room" required
+      class="w-full px-3 py-2 rounded-md bg-gray-100 text-black focus:outline-none focus:ring-2 focus:ring-blue-400">
+      <option value="">Select Room</option>
+      <!-- Room options 1 to 20 -->
+      <!-- You can also generate these dynamically using JS if desired -->
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+      <option value="13">13</option>
+      <option value="14">14</option>
+      <option value="15">15</option>
+      <option value="16">16</option>
+      <option value="17">17</option>
+      <option value="18">18</option>
+      <option value="19">19</option>
+      <option value="20">20</option>
+    </select>
+  </div>
+      <!-- Date of Joining -->
+      <div>
+        <label for="doj" class="block text-sm mb-1">Date of Joining</label>
+        <input type="date" name="doj" id="doj" required
+          class="w-full px-3 py-2 rounded-md bg-gray-100 text-black focus:outline-none focus:ring-2 focus:ring-blue-400" />
+      </div>
+
+      <!-- Submit Button -->
+      <div>
+        <button type="submit"
+          class="w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 rounded-md text-white font-semibold transition duration-200">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+
+</body>
+
+</html>
